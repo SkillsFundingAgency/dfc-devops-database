@@ -14,7 +14,7 @@
     </RootPath>
     <RootNamespace>dfc.devops.database</RootNamespace>
     <AssemblyName>dfc.devops.database</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -24,6 +24,8 @@
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <DefaultSchema>devops</DefaultSchema>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -58,5 +60,57 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\LearnAimRefType.sql" />
+    <Build Include="dbo\Tables\AspNetRoles.sql" />
+    <Build Include="dbo\Tables\AspNetUserRoles.sql" />
+    <Build Include="dbo\Tables\AspNetUsers.sql" />
+    <Build Include="dbo\Tables\SectorSubjectAreaTier1.sql" />
+    <Build Include="dbo\Tables\SectorSubjectAreaTier2.sql" />
+    <Build Include="dbo\Tables\ONSPD_NOV_2018_UK.sql" />
+    <Build Include="dbo\Tables\ONSPD_Country.sql" />
+    <Build Include="dbo\Tables\ONSPD_County.sql" />
+    <Build Include="dbo\Tables\ONSPD_LA_UA.sql" />
+    <Build Include="dbo\Tables\ONSPD_Region.sql" />
+    <Build Include="dbo\Tables\ONSPD_Parish.sql" />
+    <Build Include="dbo\Tables\ONSPD_Ward.sql" />
+    <Build Include="dbo\Tables\LearningAim.sql" />
+    <Build Include="dbo\Tables\CourseInstanceStartDate.sql" />
+    <Build Include="dbo\Tables\CourseInstanceVenue.sql" />
+    <Build Include="dbo\Tables\CourseInstance.sql" />
+    <Build Include="dbo\Tables\__EFMigrationsHistory.sql" />
+    <Build Include="dbo\Tables\Course.sql" />
+    <Build Include="dbo\Tables\AspNetRoleClaims.sql" />
+    <Build Include="dbo\Tables\Provider.sql" />
+    <Build Include="dbo\Tables\CourseMigration.sql" />
+    <Build Include="dbo\Tables\AspNetUserClaims.sql" />
+    <Build Include="dbo\Tables\CourseTransfer.sql" />
+    <Build Include="dbo\Tables\AspNetUserLogins.sql" />
+    <Build Include="dbo\Tables\CourseTransfer_CourseAudit.sql" />
+    <Build Include="dbo\Tables\CourseTransfer_ProviderAudit.sql" />
+    <Build Include="dbo\Tables\AspNetUserTokens.sql" />
+    <Build Include="dbo\Tables\LearningDelivery.sql" />
+    <Build Include="dbo\Tables\AwardOrgCode.sql" />
+    <Build Include="dbo\Tables\temp_LearningDelivery.sql" />
+    <Build Include="dbo\Tables\ProviderUser.sql" />
+    <Build Include="dbo\Views\LARS.sql" />
+    <Build Include="dbo\Views\ONSPD.sql" />
+    <Build Include="Security\dfc-coursedirectory-console-import.sql" />
+    <Build Include="Security\svc-dfc-coursedirectory.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\dfc_CourseTransferAdd.sql" />
+    <Build Include="dbo\Stored Procedures\dfc_CourseTransferCourseAuditAdd.sql" />
+    <Build Include="dbo\Stored Procedures\dfc_CourseTransferProviderAuditAdd.sql" />
+    <Build Include="dbo\Stored Procedures\dfc_CourseTransferUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\dfc_GetCourseInstancesByCourseId.sql" />
+    <Build Include="dbo\Stored Procedures\dfc_GetCoursesByProviderUKPRN.sql" />
+    <Build Include="dbo\Stored Procedures\dfc_GetProviderUKPRNs.sql" />
+    <Build Include="dbo\Stored Procedures\dfc_GetUserAuthorisationDetailsByEmail.sql" />
   </ItemGroup>
 </Project>
